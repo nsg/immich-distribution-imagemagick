@@ -144,7 +144,6 @@ stage-snaps:
     │       ├── type-windows.xml
     │       └── type.xml
     ├── include
-    │   ├── cgif.h
     │   └── ImageMagick-7
     │       ├── Magick++
     │       │   ├── Blob.h
@@ -562,9 +561,6 @@ stage-snaps:
     │   └── x86_64-linux-gnu
     │       ├── libcairo.so.2 -> libcairo.so.2.11600.0
     │       ├── libcairo.so.2.11600.0
-    │       ├── libcgif.so -> libcgif.so.0
-    │       ├── libcgif.so.0 -> libcgif.so.0.3.2
-    │       ├── libcgif.so.0.3.2
     │       ├── libdatrie.so.1 -> libdatrie.so.1.3.5
     │       ├── libdatrie.so.1.3.5
     │       ├── libde265.so.0 -> libde265.so.0.0.11
@@ -667,9 +663,7 @@ stage-snaps:
     │       ├── libxml2.so.2 -> libxml2.so.2.9.10
     │       ├── libxml2.so.2.9.10
     │       ├── libXrender.so.1 -> libXrender.so.1.3.0
-    │       ├── libXrender.so.1.3.0
-    │       └── pkgconfig
-    │           └── cgif.pc
+    │       └── libXrender.so.1.3.0
     └── share
         ├── doc
         │   ├── fontconfig

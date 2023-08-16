@@ -20,8 +20,6 @@ parts:
       snapcraftctl build
     build-packages:
       - libltdl-dev
-    after:
-      - cgif
     stage-packages:
       - libcairo2
       - libdatrie1
@@ -74,11 +72,3 @@ parts:
       - -usr/share/lintian
       - -usr/share/man
       - -usr/share/X11
-
-  cgif:
-    plugin: meson
-    meson-version: "1.2.1"
-    source: https://github.com/dloebl/cgif.git
-    source-tag: "V0.3.2"
-    organize:
-      usr/local: usr
