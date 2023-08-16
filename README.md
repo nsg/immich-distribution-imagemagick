@@ -9,6 +9,10 @@ stage-snaps:
     - immich-distribution-imagemagick/latest/stable
 ```
 
+## Included dependencies
+
+* [immich-distribution-libraw/latest/stable](https://github.com/nsg/immich-distribution-libraw)
+
 ## Contents
 ```
 .
