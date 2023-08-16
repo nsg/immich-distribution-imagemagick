@@ -10,16 +10,52 @@ architectures:
 grade: stable
 confinement: strict
 
+apps:
+  magick:
+    command: usr/bin/magick
+
+layout:
+  /usr/etc/ImageMagick-7:
+    symlink: $SNAP/usr/etc/ImageMagick-7
+  /usr/lib/ImageMagick-7.1.1:
+    symlink: $SNAP/usr/lib/ImageMagick-7.1.1
+
 parts:
   imagemagick:
     plugin: make
     source: https://github.com/ImageMagick/ImageMagick/archive/7.1.1-13.tar.gz
     source-checksum: "sha256/8e3ce1aaad19da9f2ca444072bcc631d193a219e3ee11c13ad6d3c895044142c"
     override-build: |
-      ./configure --enable-static=yes --with-x=no --prefix=/usr
+      ./configure --with-modules --enable-static=yes --with-x=no --with-raw=yes --prefix=/usr
       snapcraftctl build
     build-packages:
       - libltdl-dev
+      - libbz2-dev
+      - libdjvulibre-dev
+      - libexif-dev
+      - libfftw3-dev
+      - libfontconfig1-dev
+      - libfreetype6-dev
+      - libjpeg-dev
+      - liblcms2-dev
+      - liblqr-1-0-dev
+      - liblzma-dev
+      - libopenexr-dev
+      - libpango1.0-dev
+      - libperl-dev
+      - libpng-dev
+      - librsvg2-bin
+      - librsvg2-dev
+      - libtiff-dev
+      - libwebp-dev
+      - libwmf-dev
+      - libx11-dev
+      - libxext-dev
+      - libxml2-dev
+      - libxt-dev
+      - zlib1g-dev
+      - libheif-dev
+      - libzstd-dev
     stage-packages:
       - libcairo2
       - libdatrie1
@@ -67,6 +103,14 @@ parts:
       - -usr/share/apport
       - -usr/share/djvu
       - -usr/share/docs
+      - -usr/share/doc
       - -usr/share/lintian
       - -usr/share/man
       - -usr/share/X11
+    after:
+      - dependencies
+
+  dependencies:
+    plugin: nil
+    stage-snaps:
+      - immich-distribution-libraw/latest/stable
