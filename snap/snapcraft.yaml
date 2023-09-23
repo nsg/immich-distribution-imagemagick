@@ -23,8 +23,8 @@ layout:
 parts:
   imagemagick:
     plugin: make
-    source: https://github.com/ImageMagick/ImageMagick/archive/7.1.1-13.tar.gz
-    source-checksum: "sha256/8e3ce1aaad19da9f2ca444072bcc631d193a219e3ee11c13ad6d3c895044142c"
+    source: https://github.com/ImageMagick/ImageMagick/archive/7.1.1-17.tar.gz
+    source-checksum: "sha256/8e4621d426e75b178b618a753775b32033f3682feea152eb6afc781fbac9e4a6"
     override-build: |
       wget https://raw.githubusercontent.com/immich-app/immich/5a49d7b85b9e7ed5ab0b5c99ca9b02f50304dce8/server/bin/use-camera-wb.patch
       patch -u coders/dng.c -i use-camera-wb.patch
