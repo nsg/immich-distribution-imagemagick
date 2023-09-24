@@ -1,6 +1,6 @@
 name: immich-distribution-imagemagick
 base: core20
-version: 7.1.1-13-dist2
+version: 7.1.1-17-dist2
 summary: ImageMagick packaged for Immich Distribution
 description: |
   ImageMagick packaged for Immich Distribution, this is not intended to be consumed directly.
